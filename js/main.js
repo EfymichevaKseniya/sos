@@ -5,7 +5,7 @@ function langMenu() {
     const select = document.querySelector('.select__box'),
         selectValue = document.querySelector('.select__value'),
         selectDropdown = document.querySelector('.select__dropdown'),
-        selectOption = document.querySelectorAll('.select__option');
+    
     
 
     
@@ -13,11 +13,6 @@ function langMenu() {
     select.addEventListener('click', () => {
         selectDropdown.classList.toggle('show');
 
-        selectOption.forEach(item =>  {
-            if (item.textContent === selectValue.textContent) {
-                item.classList.add('hide');
-            }
-        });
                 
         selectDropdown.addEventListener('click', e => {
             const option = e.target.closest('.select__option');
