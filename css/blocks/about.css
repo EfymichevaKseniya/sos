@@ -1,0 +1,148 @@
+.about {
+    padding-bottom: 188px;
+
+    background: radial-gradient(136.03% 54.57% at 50% 48.04%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 60.63%, #080A0B 99.74%), url("../../images/slider-bg.jpg") no-repeat center;;
+
+}
+
+.about__inner {
+    display: flex;
+}
+
+.about__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about__suptitle {
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 2px;
+}
+
+.about__title {
+    width: 100%;
+    max-width: 410px;
+    margin-bottom: 70px;
+    font-family: 'Bebas Neue';
+    font-size: 80px;
+    line-height: 96px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.about__title::after {
+    content: '';
+    width: 712px;
+    height: 3px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: #fff;
+    z-index: 10;
+
+}
+
+.about__text {
+    width: 100%;
+    max-width: 365px;
+    margin-left: 185px;
+    margin-right: 30px;
+
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.about__text span {
+    position: relative;
+}
+
+.about__text span::after {
+    content: '';
+    width: 122px;
+    height: 3px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFB548;
+}
+
+.slider {
+    justify-content: flex-end;
+}
+
+.slider-img {
+    width: 500px;
+    height: 610px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* стили основного контейнера слайдера */
+.slider {
+    padding-top: 200px;
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* стили для обёртки, в которой заключены слайды */
+.slider__wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.arrow-next {
+    border: none;
+    background: none;
+
+    background-color: transparent;
+
+    
+}
+
+.arrow-icon-next {
+    position: absolute;
+    top: 60%;
+    right: -10%;
+    
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+
+.dot {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+    margin-left: 3px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+    border-radius: 50%;
+    margin-right: 50px;
+}
