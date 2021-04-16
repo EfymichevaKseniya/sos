@@ -1,3 +1,43 @@
+    
+
+
+function langMenu() {
+    const select = document.querySelector('.select__box'),
+        selectValue = document.querySelector('.select__value'),
+        selectDropdown = document.querySelector('.select__dropdown'),
+        selectOption = document.querySelectorAll('.select__option');
+    
+
+    
+
+    select.addEventListener('click', () => {
+        selectDropdown.classList.toggle('show');
+
+        selectOption.forEach(item =>  {
+            if (item.textContent === selectValue.textContent) {
+                item.classList.add('hide');
+            }
+        });
+                
+        selectDropdown.addEventListener('click', e => {
+            const option = e.target.closest('.select__option');
+            let temp = "";
+
+            if (option) {
+                temp = selectValue.textContent;
+                selectValue.textContent = option.textContent;
+                option.textContent = temp;
+                e.target.closest('.select__box').blur();
+            }
+            
+        });
+    });
+}
+
+langMenu();
+
+
+
 function slider() {
     
     const   slides = document.querySelectorAll('.slider__item'),
@@ -85,3 +125,4 @@ function slider() {
 }
 
 slider();
+
