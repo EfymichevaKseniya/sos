@@ -33,116 +33,97 @@ function slider() {
     const   card = document.querySelectorAll('.slider__item'),
             arrowNext = document.querySelector('.arrow-next'),
             cardWrapper = document.querySelector('.slider__wrapper'),
-            width = window.getComputedStyle(cardWrapper).width;
+            width = window.getComputedStyle(cardWrapper).width,
+            slider = document.querySelector('.slider');
             
+            let arr = [];
             let currentSlide = 0;
-            let offset = 0;
-            let zIndex = card.length;
+            let slideIndex = 1;
         
             function slides() {
-                card.forEach((slide, i) => (i===0) ? slide.classList.add('bottom') : slide.classList.add('top'));
-            }   
+                
+            }
+
+            cardWrapper.style.transition = '0.5s all';
+
+            slider.style.position = 'relative';
+
+            const indicators = document.createElement('ol'),
+                dots = [];
+            indicators.classList.add('carousel-indicators');
+
+            slider.append(indicators);
+
+            for (let i = 0; i < card.length; i++) {
+                const dot = document.createElement('li');
+                dot.classList.add('dot');
+                dot.setAttribute('data-slide-to', i + 1);
+
+
+                if ( i == 0) {
+                    dot.style.backgroundColor = '#fff';
+                }
+                indicators.append(dot);
+                dots.push(dot);
+            }
+
+            
+            function showSlides() {
+                dots.forEach(dot => dot.style.backgroundColor = 'transparent');
+                dots[slideIndex-1].style.backgroundColor = '#fff';
+            }
 
             function nextSlide() {
                 if (currentSlide < card.length) {
-                    card[currentSlide].classList.toggle('bottom');
-                    currentSlide = (currentSlide+1) % card.length;
                     card[currentSlide].classList.toggle('top');
-                    card[currentSlide].style.transform = `translateX(-${offset}px)`;
+                    currentSlide = (currentSlide+1) % card.length;
+                    card[currentSlide].classList.add('top');
                 } 
+                
             }
-            arrowNext.addEventListener('click', () => {
-                nextSlide();
+            
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    const slideTo = e.target.getAttribute('data-slide-to');
+    
+                    slideIndex = slideTo;
+                    showSlides();
+                });
             });
+
+            arrowNext.addEventListener('click', () => {
+                slides();
+                nextSlide();
+
+                if (slideIndex == card.length) {
+                    slideIndex = 1;
+                } else {
+                    slideIndex++;
+                }
+    
+                showSlides();
+                
+            });
+
+            
+            
 }
 
 slider();
 
-// function slider() {
+function accordion() {
+
+    const  items = document.querySelectorAll('.accordion__item');
+            
+            items.forEach(item => {
+                item.addEventListener('click', () => {
     
-//     const   slides = document.querySelectorAll('.slider__item'),
-//             slider = document.querySelector('.slider'),
-//             next = document.querySelector('.arrow-next'),
-//             slidesWrapper = document.querySelector('.slider__wrapper'),
-//             slidesField = document.querySelector(".slider__items"),
-//             width = window.getComputedStyle(slidesWrapper).width;
+                    item.classList.toggle('active'); 
 
-//         let slideIndex = 1;
-//         let offset = 0;
+                });
+            });   
             
-//         slidesField.style.width = 100 * slides.length + '%';
-//         slidesField.style.display = 'flex';
-//         slidesField.style.transition = '0.5s all';
+}
 
-        
-
-//         slides.forEach(slide => {
-//             slide.style.width = width;
-//         });
-
-//         slider.style.position = 'relative';
-
-//         const indicators = document.createElement('ol'),
-//             dots = [];
-//         indicators.classList.add('carousel-indicators');
-
-//         slider.append(indicators);
-
-//         for (let i = 0; i < slides.length; i++) {
-//             const dot = document.createElement('li');
-//             dot.classList.add('dot');
-//             dot.setAttribute('data-slide-to', i + 1);
-
-
-//             if ( i == 0) {
-//                 dot.style.opacity = 1;
-//             }
-//             indicators.append(dot);
-//             dots.push(dot);
-//         }
-
-//         function deleteNotDigits(str) {
-//             return +str.replace(/\D/g, '');
-//         }
-
-//         function showSlides() {
-//             dots.forEach(dot => dot.style.opacity = 0.5);
-//             dots[slideIndex-1].style.opacity = 1;
-//         }
-
-//         next.addEventListener('click', () => {
-//             if (offset === deleteNotDigits(width) * (slides.length - 1)) { //  500px'
-//                 offset = 0;
-//             } else {
-//                 offset += deleteNotDigits(width);
-//             }
-
-//             slidesField.style.transform = `translateX(-${offset}px)`;
-
-//             if (slideIndex == slides.length) {
-//                 slideIndex = 1;
-//             } else {
-//                 slideIndex++;
-//             }
-
-//             showSlides();
-            
-//         });
-
-//         dots.forEach(dot => {
-//             dot.addEventListener('click', (e) => {
-//                 const slideTo = e.target.getAttribute('data-slide-to');
-
-//                 slideIndex = slideTo;
-//                 offset = deleteNotDigits(width) * (slideTo - 1);
-
-//                 slidesField.style.transform = `translateX(-${offset}px)`;
-
-//                 showSlides();
-//             });
-//         });
-
-// }
-
-// slider();
-
+accordion();

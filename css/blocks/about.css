@@ -1,6 +1,6 @@
 .about {
     padding-top: 188px;
-    padding-bottom: 144px;
+    padding-bottom: 235px;
 
     background: radial-gradient(136.03% 54.57% at 50% 48.04%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 60.63%, #080A0B 99.74%), url("../../images/slider-bg.jpg") no-repeat center;
     background-size: cover;
@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-.about__suptitle {
+.suptitle {
     margin-bottom: 10px;
     font-family: 'Bebas Neue';
     font-size: 24px;
@@ -26,7 +26,7 @@
     letter-spacing: 2px;
 }
 
-.about__title {
+.title {
     width: 100%;
     margin-bottom: 50px;
     font-family: 'Bebas Neue';
@@ -37,19 +37,7 @@
     position: relative;
 }
 
-.about__title::after {
-    content: '';
-    width: 712px;
-    height: 3px;
 
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-
-    background-color: #fff;
-    z-index: 10;
-
-}
 
 .about__text {
     width: 100%;
@@ -59,6 +47,22 @@
 
     font-size: 18px;
     line-height: 22px;
+
+    position: relative;
+}
+
+.about__text::after {
+    content: '';
+    width: 712px;
+    height: 3px;
+
+    position: absolute;
+    top: -40%;
+    left: -50%;
+
+    background-color: #fff;
+    z-index: 10;
+
 }
 
 .about__text span {
@@ -110,25 +114,25 @@
     left: 0; 
     top: 0; 
     bottom: 0;
+
+    transform: translate(0) scale(1);
+    
 }
 
+.slider__item:nth-child(2) {
+    transform:  translate(80px) scale(0.9);
 
-/* .slider__item:nth-child(1) {
-    transform: translate(20px, -50px) scale(1);
-    
-} */
-
-/* .slider__item:nth-child(2) {
-    transform:  translate(80px, -50px) scale(0.9);
 } 
 
 .slider__item:nth-child(3) {
-    transform:  translate(120px, -50px) scale(0.85);
+    transform:  translate(120px) scale(0.85);
+
 }
 
 .slider__item:nth-child(4) {
-    transform:  translate(160px, -50px) scale(0.8);
-}  */
+    transform:  translate(160px) scale(0.8);
+
+} 
 
 .slider-img {
     width: 100%;
@@ -179,12 +183,8 @@
     margin-right: 3px;
     margin-left: 3px;
     cursor: pointer;
-    background-color: #fff;
-    background-clip: padding-box;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    opacity: .5;
-    transition: opacity .6s ease;
+    background-color: transparent;
+    border: 1px solid #fff;
     border-radius: 50%;
     margin-right: 50px;
 }
@@ -196,5 +196,4 @@
 
 .bottom {
     z-index: 1;
-    transform: scale(0.8);
 }

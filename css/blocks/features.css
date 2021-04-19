@@ -1,0 +1,79 @@
+.features {
+    padding-top: 258px;
+    padding-bottom: 258px;
+    height: 100vh;
+
+    background: radial-gradient(136.03% 54.57% at 50% 48.04%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 60.63%, #080A0B 99.74%), url("../../images/features-bg.jpg") no-repeat center;
+    background-size: cover;
+
+    position: relative;
+}
+.features__inner {
+    position: absolute;
+    top: 50%;
+    right: 236px;
+
+    transform: translateY(-50%);
+}
+
+.accordion {
+    margin-top: 70px;
+    width: 420px;
+    height: 300px;
+}
+
+.accordion__item {
+    margin-bottom: 36px;
+    margin-left: 32px;
+
+    position: relative;
+}
+
+
+
+.accordion__item-title {
+    margin-bottom: 5px;
+    font-family: 'Bebas Neue';
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 2px;
+
+    color: #FFB548;
+
+    cursor: pointer;
+}
+
+
+.accordion__item-text {
+    width: 362px;
+    height: 0;
+    overflow: hidden;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+    margin-bottom: 27px;
+}
+
+
+.accordion__item-dots {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+    border: 1px solid #fff;
+
+    position: absolute;
+    top: 10px;
+    left: -32px;
+
+    background-color:  transparent;
+}
+
+
+
+.active .accordion__item-dots {
+    background-color: #fff;
+}
+
+
+.active .accordion__item-text {
+    height: 78px;
+}
