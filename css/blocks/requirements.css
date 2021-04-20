@@ -1,0 +1,74 @@
+.requirements {
+    padding-bottom: 170px;
+    background:  radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080A0B 99.74%), url("../../images/requirements-bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.requirements__inner {
+    padding-top: 145px;
+}
+
+.requirements__info {
+    text-align: center;
+    margin-bottom: 133px;
+}
+
+
+.requirements__table {
+    width: 573px;
+    height: 400px; 
+    border-top: none;
+    border-bottom: none;
+
+    position: relative;
+}
+
+.requirements__table::after {
+    content: '';
+    width: 573px;
+    height: 400px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: url("../../images/table.png") no-repeat center;
+}
+
+
+td, th {
+    padding: 14px 13px 0;
+
+    border: 1px solid rgba(151,151,151, .5); 
+    text-align: left; 
+    background: none;
+}
+
+th{
+	border-top:none;
+}
+td:first-child, th:first-child{
+	border-left:none;
+}
+td:nth-child(2), th:nth-child(2){
+	border-left:none;
+}
+
+td:last-child, th:last-child{
+	border-right:none;
+}
+
+tr:last-child td{
+	border-bottom:none;
+}
+
+.requirements__title {
+    margin-bottom: 6px;
+
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 2px;
+
+    color: #FFB548;
+}

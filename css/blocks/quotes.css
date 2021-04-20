@@ -1,0 +1,110 @@
+.quotes {
+    background:  radial-gradient(70.52% 37.27% at 24.21% 47.47%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 51.1%, #080A0B 99.74%), url("../../images/quotes-bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.quotes__inner {
+    padding-bottom: 148px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quotes__info {
+    width: 438px;
+    padding-top: 300px;
+}
+
+.quotes__text {
+    margin-bottom: 37px;
+}
+
+.quotes__items {
+    padding-top: 160px;
+}
+
+.quotes__item {
+    width: 453px;
+    min-height: 183px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.quotes__item + .quotes__item {
+    margin-top: 30px;
+}
+
+.quotes__item--one {
+    margin-left: auto;
+    margin-right: 0;
+
+}
+
+.quotes__item--two {
+    margin-left: auto;
+    margin-right: 114px;
+}
+
+.quotes__item--three {
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+
+.quotes__item__info {
+    margin-bottom: 26px;
+    padding: 11px 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user__avatar {
+    margin-right: 30px; 
+}
+
+
+.user__foto {
+    width: 66px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    -webkit-filter: drop-shadow(8px 5px 0px #FFB548);
+    filter: drop-shadow(8px 5px 0px #FFB548);
+    
+}
+
+.user__name {
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 2px;
+
+    color: #FFB548;
+}
+
+.user__prof {
+    opacity: 0.5;
+}
+
+.quotes__item-text {
+    margin-bottom: 9px;
+    padding: 0 40px 0 17px;
+    line-height: 25px;
+}
+
+.quotes__item-date {
+    padding: 9px 17px 21px;
+    font-size: 14px;
+    line-height: 19px;
+
+    color:#FFFFFF;
+    opacity: 0.5;
+
+}

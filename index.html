@@ -45,8 +45,12 @@
                     </ul>
                 </div> 
                 <div class="icon__box">
-                    <img class="header__icon" src="images/xbox.svg" alt="icon xbox">
-                    <img class="header__icon" src="images/steam.svg" alt="icon steam">
+                    <a class="icon__link" href="#">
+                        <img class="header__icon" src="images/xbox.svg" alt="icon xbox">
+                    </a>
+                    <a class="icon__link" href="#">
+                        <img class="header__icon" src="images/steam.svg" alt="icon steam">
+                    </a>
                 </div>
             </div>
         </div>
@@ -54,7 +58,7 @@
         <div class="header__content">
             <h2 class="header__content-title">SURVIVE AT ALL COSTS</h2>
             <h4 class="header__content-subtitle">Experience new social battle royale game</h4>
-            <a href="#" class="header__content-btn">Buy Now on Steam | $14.99</a>
+            <a href="#" class="btn">Buy Now on Steam | $14.99</a>
         </div>
 
         <div class="header__btn-down">
@@ -105,18 +109,31 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>   <!-- /.about -->
 
+    <!-- features -->
     <section class="features">
         <div class="container">
             <div class="features__inner">
-                <h4 class="suptitle">What’s so special?</h4>
-                <h3 class="title">features</h3>
-                <div class="accordion">
-                    <ul class="accordion__list">
-                        <li class="accordion__item active">
-                            
-                                <h5 class="accordion__item-title">SURVIVE AT ALL COSTS</h5>
+                <div class="features__info">
+                    <h4 class="suptitle">What’s so special?</h4>
+                    <h3 class="title">features</h3>
+                    <div class="accordion">
+                        <ul class="accordion__list">
+                            <li class="accordion__item active">
+                                
+                                    <h5 class="accordion__item-title">SURVIVE AT ALL COSTS</h5>
+                                    <div class="accordion__item-text">
+                                        <p>
+                                            You have 30 minutes to find a relic, signal for extraction, and grab
+                                            one of three spots on the rescue chopper.
+                                        </p>
+                                    </div>
+                                    <span class="accordion__item-dots"></span>
+                                
+                            </li>
+                            <li class="accordion__item">
+                                <h5 class="accordion__item-title">CREATE ALLIES AND ENEMIES</h5>
                                 <div class="accordion__item-text">
                                     <p>
                                         You have 30 minutes to find a relic, signal for extraction, and grab
@@ -124,31 +141,166 @@
                                     </p>
                                 </div>
                                 <span class="accordion__item-dots"></span>
-                            
-                        </li>
-                        <li class="accordion__item">
-                            <h5 class="accordion__item-title">CREATE ALLIES AND ENEMIES</h5>
-                            <div class="accordion__item-text">
-                                <p>
-                                    You have 30 minutes to find a relic, signal for extraction, and grab
-                                    one of three spots on the rescue chopper.
-                                </p>
-                            </div>
-                            <span class="accordion__item-dots"></span>
-                        </li>
-                        <li class="accordion__item">
-                            <h5 class="accordion__item-title">IMPRESS THE AUDIENCE</h5>
-                            <div class="accordion__item-text">
-                                <p>
-                                    You have 30 minutes to find a relic, signal for extraction, and grab
-                                    one of three spots on the rescue chopper.
-                                </p>
-                            </div>
-                            <span class="accordion__item-dots"></span>
-                        </li>
-                    </ul>
+                            </li>
+                            <li class="accordion__item">
+                                <h5 class="accordion__item-title">IMPRESS THE AUDIENCE</h5>
+                                <div class="accordion__item-text">
+                                    <p>
+                                        You have 30 minutes to find a relic, signal for extraction, and grab
+                                        one of three spots on the rescue chopper.
+                                    </p>
+                                </div>
+                                <span class="accordion__item-dots"></span>
+                            </li>
+                        </ul>
+                    </div> <!--/.accordion-->
                 </div>
             </div> 
+        </div>
+    </section> <!--/.section features-->
+
+    <!-- requirements -->
+    <section class="requirements">
+        <div class="container">
+            <div class="requirements__inner">
+                <div class="requirements__info">
+                    <h4 class="suptitle">Can My Computer Run this game?</h4>
+                    <h3 class="title">system requirements</h3>
+                </div>
+                <table class="requirements__table">
+                    <tr>
+                        <td>
+                            <h5 class="requirements__title">os:</h5>
+                            <p class="requirements__text">
+                                Windows 7 64-bit only
+                                (No OSX support at this time)
+                            </p>
+                        </td>
+                        <td>
+                            <h5 class="requirements__title">processor:</h5>
+                            <p class="requirements__text">
+                                Intel Core 2 Duo @ 2.4 GHZ or AMD Athlon X2 @ 2.8 GHZ
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h5 class="requirements__title">memory:</h5>
+                            <p class="requirements__text">8 GB RAM</p>
+                        </td>
+                        <td>
+                            <h5 class="requirements__title">storage:</h5>
+                            <p class="requirements__text">8 GB available space</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h5 class="requirements__title">grafics:</h5>
+                            <p class="requirements__text">
+                                NVIDIA GeForce GTX 660 2GB or 
+                                AMD Radeon HD 7850 2GB DirectX11 (Shader Model 5)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- quotes -->
+    <section class="quotes">
+        <div class="container">
+            <div class="quotes__inner">
+                <div class="quotes__info">
+                    <h4 class="suptitle">What people think?</h4>
+                    <h3 class="title">Press quotes</h3>
+                    <p class="quotes__text">
+                        Our goal is to create a product and service that you’re satisfied with and use it every day. This is why we’re constantly working on our services to make it better every day and really listen to what our users has to say.
+                    </p>
+                    <button class="btn btn--quotes">Read more testimonials</button>
+
+                </div>
+            
+                <div class="quotes__items">
+                    <div class="quotes__item quotes__item--one">
+                        <div class="quotes__item__info">
+                            <div class="user">
+                                <div class="user__avatar">
+                                    <img class="user__foto" src="images/quotes/avatar-1.png" alt="avatar">
+                                </div>
+                                <div class="user__info">
+                                    <div class="user__name">Evan Lahti</div>
+                                    <div class="user__prof">PC Gamer</div>
+                                </div>
+                            </div>
+                            <img class="quotes__icon" src="images/quotes/twitter.svg" alt="icon twitter">
+                        </div>
+                        <blockquote class="quotes__item-text">
+                            “One of my gaming highlights of the year.”
+                        </blockquote>
+                        <div class="quotes__item-date">October 18, 2018</div>
+                    </div>
+                    <div class="quotes__item quotes__item--two">
+                        <div class="quotes__item__info">
+                            <div class="user">
+                                <div class="user__avatar">
+                                    <img class="user__foto" src="images/quotes/avatar-2.png" alt="avatar">
+                                </div>
+                                <div class="user__info">
+                                    <div class="user__name">Jada Griffin </div>
+                                    <div class="user__prof">Nerdreactor</div>
+                                </div>
+                            </div>
+                            <img class="quotes__icon" src="images/quotes/twitter.svg" alt="icon twitter">
+                        </div>
+                        <blockquote class="quotes__item-text">
+                            “The next big thing in the world of streaming and survival games.”
+
+                        </blockquote>
+                        <div class="quotes__item-date">October 21, 2018</div>
+                    </div>
+                    <div class="quotes__item quotes__item--three">
+                        <div class="quotes__item__info">
+                            <div class="user">
+                                <div class="user__avatar">
+                                    <img class="user__foto" src="images/quotes/avatar-3.png" alt="avatar">
+                                </div>
+                                <div class="user__info">
+                                    <div class="user__name">Aaron Williams</div>
+                                    <div class="user__prof">Uproxx</div>
+                                </div>
+                            </div>
+                            <img class="quotes__icon" src="images/quotes/twitter.svg" alt="icon twitter">
+                        </div>
+                        <blockquote class="quotes__item-text">
+                            “Snoop Dogg Playing The Wildly Entertaining ‘SOS’ Is Ridiculous.”
+                        </blockquote>
+                        <div class="quotes__item-date">October 24, 2018</div>
+                    </div>
+                </div> <!--/. quotes__items-->
+            </div>
+        </div>
+    </section>  <!-- /.quotes -->
+
+    <!-- subscribe -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter__inner">
+                <div class="subscribe">
+                    <div class="subscribe__info">
+                        <h4 class="suptitle">Want to stay in touch?</h4>
+                        <h3 class="title">newsletter SUBSCRIBE </h3>
+                        <p class="quotes__text">
+                            In order to start receiving our news, all you have to do is enter your email address. Everything else will be taken care of by us. We will send you emails containing information about game. We don’t spam.
+                        </p>
+                        <form class="subscribe__form">
+                            <input class="subscribe__input" type="email" name="email" value="aliciliniavopir@gmail.com" placeholder="Your email address">
+                            <button class="btn btn--quotes" type="submit">Subscribe now</button>
+                        </form>
+                    </div>
+                        
+                </div>
+            </div>
         </div>
     </section>
 </main>

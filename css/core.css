@@ -21,3 +21,50 @@ body {
     padding: 0 15px;
     margin: 0 auto;
 }
+
+.btn {
+    margin: 0 auto;
+    width: 260px;
+    height: 60px;
+    padding: 19px 20px 20px 17px;
+    background: linear-gradient(194.68deg, #FFB548 11.27%, #F3AF34 90.4%);
+    border-radius: 4px;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+
+    color: #1A1917;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn--quotes {
+    border: none;
+}
+
+.btn:hover {
+    background: linear-gradient(194.68deg, #df9e3d 11.27%, #cf962b 90.4%);
+}
+
+.suptitle {
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 2px;
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 50px;
+    font-family: 'Bebas Neue';
+    font-size: 80px;
+    line-height: 96px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+}
