@@ -62,7 +62,18 @@
     background-color:  transparent;
 }
 
+.line {
+    width: 2px;
+    height: 165px;
 
+    position: absolute;
+    top: 10px;
+    left: -26px;
+
+    background-color: #fff;
+
+    transition: all .9s;
+}
 
 .active .accordion__item-dots {
     background-color: #fff;
@@ -71,4 +82,9 @@
 
 .active .accordion__item-text {
     height: 78px;
+}
+
+.hide {
+    display: none;
+
 }

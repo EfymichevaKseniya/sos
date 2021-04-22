@@ -115,11 +115,16 @@ slider();
 function accordion() {
 
     const  items = document.querySelectorAll('.accordion__item');
+    const   lines = document.querySelectorAll('.line');    
             
             items.forEach(item => {
                 item.addEventListener('click', () => {
     
                     item.classList.toggle('active'); 
+                    lines.forEach(line => {
+                        line.classList.toggle('hide');
+                    });
+                    
 
                 });
             });   
