@@ -64,15 +64,16 @@
 
 .line {
     width: 2px;
-    height: 165px;
+    height: 0;
+
 
     position: absolute;
-    top: 10px;
+    top: 24px;
     left: -26px;
 
     background-color: #fff;
 
-    transition: all .9s;
+    transition: all .5s;
 }
 
 .active .accordion__item-dots {
@@ -84,7 +85,6 @@
     height: 78px;
 }
 
-.hide {
-    display: none;
-
+.active .line {
+    height: 150px;
 }
