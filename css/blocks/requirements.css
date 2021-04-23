@@ -32,7 +32,8 @@
     top: 0;
     left: 0;
 
-    background: url("../../images/table.png") no-repeat center;
+    background: url("../../images/table.png") no-repeat center top;
+    padding-bottom: 10px;
 }
 
 

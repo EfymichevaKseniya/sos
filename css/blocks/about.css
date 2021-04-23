@@ -1,5 +1,4 @@
 .about {
-
     background:  radial-gradient(136.03% 54.57% at 50% 48.04%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 60.63%, #080A0B 99.74%), url("../../images/slider-bg.jpg") no-repeat center;
     background-size: cover;
 
@@ -8,8 +7,7 @@
 .about__inner {
     display: flex;
     padding-top: 188px;
-    padding-bottom: 141px;
-    
+    padding-bottom: 280px;
 }
 
 .about__info {
@@ -66,6 +64,7 @@
 .slider {
     position: relative;
     width: 100%;
+
 }
 
 /* стили для обёртки, в которой заключены слайды */
@@ -90,27 +89,34 @@
     position: absolute;
     right: 0;
     left: 0; 
-    top: 0; 
+    top: -100px; 
     bottom: 0;
-
-    transform: translate(0) scale(1);
     
 }
 
+/* .slider__item:nth-child(1) {
+    transform:  translate(0) scale(1);
+    z-index: 5;
+
+}
+
 .slider__item:nth-child(2) {
-    transform:  translate(80px) scale(0.9);
+    transform:  translate(40px) scale(0.9);
+    z-index: 4;
 
 } 
 
 .slider__item:nth-child(3) {
-    transform:  translate(120px) scale(0.85);
+    transform:  translate(80px) scale(0.85);
+    z-index: 3;
 
 }
 
 .slider__item:nth-child(4) {
-    transform:  translate(160px) scale(0.8);
+    transform:  translate(120px) scale(0.8);
+    z-index: 2;
 
-} 
+}  */
 
 .slider-img {
     width: 100%;
@@ -169,9 +175,21 @@
 
 .top {
     z-index: 7;
-    transform: scale(1);
 }
 
-.bottom {
-    z-index: 1;
+.one {
+    transform:  translate(0) scale(1);
+    z-index: 5;
+}
+.two {
+    transform:  translate(50px) scale(0.9);
+    z-index: 4;
+}
+.three {
+    transform:  translate(80px) scale(0.85);
+    z-index: 3;
+}
+.four {
+    transform:  translate(110px) scale(0.8);
+    z-index: 2;
 }

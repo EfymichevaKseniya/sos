@@ -95,6 +95,8 @@
 
 }
 
+
+
 .select__value {
     display: block;
     padding: 3px 5px;
@@ -103,6 +105,11 @@
     font-size: 12px;
     line-height: 16px;
     letter-spacing: 0.1em;
+}
+
+.select__value:hover{
+    background: linear-gradient(194.68deg, #FFB548 11.27%, #F3AF34 90.4%);
+    border-radius: 4px;
 }
 
 .select:focus .select_dropdown {
@@ -167,6 +174,9 @@
     text-transform: uppercase;
 }
 
+.header__btn:hover {
+    color: #000;
+}
 
 
 .header__btn-down {

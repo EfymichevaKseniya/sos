@@ -8,6 +8,12 @@ a{
     text-decoration: none;
 }
 
+
+a:hover {
+    color: #FFB548;
+    border-radius: 5px;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
@@ -27,6 +33,7 @@ body {
     width: 260px;
     height: 60px;
     padding: 19px 20px 20px 17px;
+
     background: linear-gradient(194.68deg, #FFB548 11.27%, #F3AF34 90.4%);
     border-radius: 4px;
     cursor: pointer;
@@ -37,14 +44,13 @@ body {
     line-height: 22px;
     text-align: center;
 
+    border: none;
+
     color: #1A1917;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.btn--quotes {
-    border: none;
-}
 
 .btn:hover {
     background: linear-gradient(194.68deg, #df9e3d 11.27%, #cf962b 90.4%);

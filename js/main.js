@@ -30,31 +30,28 @@ langMenu();
 
 
 function slider() {
-    const   card = document.querySelectorAll('.slider__item'),
+    const   slides = document.querySelectorAll('.slider__item'),
             arrowNext = document.querySelector('.arrow-next'),
-            cardWrapper = document.querySelector('.slider__wrapper'),
-            width = window.getComputedStyle(cardWrapper).width,
+            sliderWrapper = document.querySelector('.slider__wrapper'),
+            width = window.getComputedStyle(sliderWrapper).width,
             slider = document.querySelector('.slider');
+
             
-            let arr = [];
+
             let currentSlide = 0;
             let slideIndex = 1;
         
-            function slides() {
-                
-            }
-
-            cardWrapper.style.transition = '0.5s all';
+            sliderWrapper.style.transition = '0.5s all';
 
             slider.style.position = 'relative';
 
             const indicators = document.createElement('ol'),
-                dots = [];
+                    dots = [];
             indicators.classList.add('carousel-indicators');
 
             slider.append(indicators);
 
-            for (let i = 0; i < card.length; i++) {
+            for (let i = 0; i < slides.length; i++) {
                 const dot = document.createElement('li');
                 dot.classList.add('dot');
                 dot.setAttribute('data-slide-to', i + 1);
@@ -73,14 +70,7 @@ function slider() {
                 dots[slideIndex-1].style.backgroundColor = '#fff';
             }
 
-            function nextSlide() {
-                if (currentSlide < card.length) {
-                    card[currentSlide].classList.toggle('top');
-                    currentSlide = (currentSlide+1) % card.length;
-                    card[currentSlide].classList.add('top');
-                } 
-                
-            }
+            
             
 
             dots.forEach(dot => {
@@ -92,11 +82,40 @@ function slider() {
                 });
             });
 
+            function slidesOrder() {
+                if (currentSlide === 0) {
+                    slides[currentSlide].classList.toggle('one');
+                }
+                if (currentSlide === 1) {
+                    slides[currentSlide].classList.toggle('two');
+                }
+                if (currentSlide === 2) {
+                    slides[currentSlide].classList.toggle('three');
+                }
+                if (currentSlide === 3) {
+                    slides[currentSlide].classList.toggle('four');
+                }
+            }
+
+            
+
+            function nextSlide() {
+                
+                slides.forEach(card => card.classList.remove('top'));
+                if (currentSlide < slides.length) {
+                    slides[currentSlide].classList.toggle('top');
+                    
+                    currentSlide = (currentSlide+1) % slides.length;
+                    slidesOrder();
+                } 
+                
+            }
+                
+
             arrowNext.addEventListener('click', () => {
-                slides();
                 nextSlide();
 
-                if (slideIndex == card.length) {
+                if (slideIndex == slides.length) {
                     slideIndex = 1;
                 } else {
                     slideIndex++;
@@ -120,7 +139,7 @@ function accordion() {
                 item.addEventListener('click', () => {
 
                     item.classList.toggle('active'); 
-                    
+
                 });
             });   
             

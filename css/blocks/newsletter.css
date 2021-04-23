@@ -38,6 +38,11 @@
     color:#FFB548;
 }
 
+.subscribe__input:focus {
+    border: 1px solid #FFB548;
+    border-radius: 5px;
+}
+
 .subscribe__input::placeholder {
     font-size: 14px;
     line-height: 19px;
