@@ -145,6 +145,47 @@
     
 }
 
+@media(max-width: 1200px) {
+    .slider {
+        display: none;
+    }
+}
+
+@media ( max-width: 768px) {
+    .about__inner {
+        flex-wrap: wrap;
+    }
+
+    .about__text::after {
+        width: 100%;
+        max-width: 712px;
+    }
+}
+
+@media(max-width: 575px) {
+    .about__text {
+        margin-left: 0;
+    }
+
+    .about__text::after {
+        top: -30%;
+    }
+}
+@media(max-width: 320px) {
+    .about__text {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .about__text::after {
+        top: -30%;
+    }
+
+    .about__text span::after {
+        width: 95px;
+    }
+}
+
 
 .carousel-indicators {
     position: absolute;

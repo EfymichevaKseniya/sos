@@ -7,6 +7,7 @@
     padding-bottom: 148px;
     display: flex;
     justify-content: space-between;
+    margin-left: 10px;
 }
 
 .quotes__info {
@@ -23,7 +24,8 @@
 }
 
 .quotes__item {
-    width: 453px;
+    width: 100%;
+    max-width: 453px;
     min-height: 183px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
@@ -107,4 +109,27 @@
     color:#FFFFFF;
     opacity: 0.5;
 
+}
+
+@media (max-width: 1200px) {
+    .quotes__inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .quotes__info {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quotes__item--one {
+        margin: 0 auto;
+    }
+    .quotes__item--two {
+        margin: 0 auto;
+    }
+    .quotes__item--three {
+        margin: 0 auto;
+    }
 }

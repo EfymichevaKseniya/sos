@@ -1,4 +1,24 @@
-    
+
+function mobileBtn() {
+    const   mobileMenu = document.querySelector('.mobile__menu'),
+            mobileClose = document.querySelector('.mobile__close'),
+            navList = document.querySelector('.nav__list');
+        
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.add('show');
+            mobileClose.classList.add('show');
+            mobileMenu.classList.add('hide');
+        });
+
+        mobileClose.addEventListener('click', () => {
+            navList.classList.remove('show');
+            mobileClose.classList.remove('show');
+            mobileMenu.classList.remove('hide');
+        });
+
+}  
+
+
 function langMenu() {
     const select = document.querySelector('.select__box'),
         selectValue = document.querySelector('.select__value'),
@@ -24,10 +44,20 @@ function langMenu() {
     });
 }
 
-langMenu();
 
+function accordion() {
 
+    const  items = document.querySelectorAll('.accordion__item'); 
+            
+            items.forEach(item => {
+                item.addEventListener('click', () => {
 
+                    item.classList.toggle('active'); 
+
+                });
+            });   
+            
+}
 
 function slider() {
     const   slides = document.querySelectorAll('.slider__item'),
@@ -40,6 +70,7 @@ function slider() {
 
             let currentSlide = 0;
             let slideIndex = 1;
+
         
             sliderWrapper.style.transition = '0.5s all';
 
@@ -95,23 +126,23 @@ function slider() {
                 if (currentSlide === 3) {
                     slides[currentSlide].classList.toggle('four');
                 }
+
             }
 
             
 
             function nextSlide() {
                 
-                slides.forEach(card => card.classList.remove('top'));
+                //slides.forEach(card => card.classList.remove());
                 if (currentSlide < slides.length) {
-                    slides[currentSlide].classList.toggle('top');
+                    slides[currentSlide].classList.toggle('one');
+                    slidesOrder();
                     
                     currentSlide = (currentSlide+1) % slides.length;
-                    slidesOrder();
                 } 
-                
             }
                 
-
+            
             arrowNext.addEventListener('click', () => {
                 nextSlide();
 
@@ -129,20 +160,8 @@ function slider() {
             
 }
 
-slider();
 
-function accordion() {
-
-    const  items = document.querySelectorAll('.accordion__item'); 
-            
-            items.forEach(item => {
-                item.addEventListener('click', () => {
-
-                    item.classList.toggle('active'); 
-
-                });
-            });   
-            
-}
-
+mobileBtn();
+langMenu();
 accordion();
+slider();

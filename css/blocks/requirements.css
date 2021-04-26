@@ -15,7 +15,8 @@
 
 
 .requirements__table {
-    width: 573px;
+    width: 100%;
+    max-width: 573px;
     height: 400px; 
     border-top: none;
     border-bottom: none;
@@ -73,3 +74,47 @@ tr:last-child td{
 
     color: #FFB548;
 }
+
+@media (max-width: 1200px) {
+    .requirements {
+        padding-bottom: 0;
+    }
+    .requirements__table {
+        margin-left: 50px;
+    }
+    
+}
+@media (max-width: 765px) {
+    .requirements__table {
+        width: 90%;
+        margin-left: 30px;
+    }
+
+    .requirements__table::after {
+        display: none;
+    } 
+
+    td, th {
+        padding-right: 20px;
+        padding-bottom: 5px;
+    }
+    
+    .requirements__title {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .requirements__text {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    
+}
+
+@media (max-width: 420px) {
+    .requirements__table {
+        margin-left: 5px;
+    }
+
+}
+

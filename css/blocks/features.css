@@ -43,7 +43,8 @@
     width: 362px;
     height: 0;
     overflow: hidden;
-    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+    transition: all .5s;
+    /* transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) all; */
     margin-bottom: 27px;
 }
 
@@ -60,6 +61,27 @@
     left: -32px;
 
     background-color:  transparent;
+}
+
+@media (max-width: 575px) {
+    .features__inner {
+        justify-content: center;
+        padding-bottom: 158px;
+    }
+    .accordion {
+        width: 100%;
+        max-width:  300px;
+    }
+
+    .accordion__item-title {
+        font-size: 25px;
+    }
+    .accordion__item-text {
+        width: 100%;
+        max-width:362px;
+        font-size: 14px;
+    }
+    
 }
 
 .line {

@@ -3,7 +3,7 @@
 }
 
 .newsletter__inner {
-    padding-top: 320px;
+    padding-top: 220px;
     padding-bottom: 152px;
 
     background:  radial-gradient(70.52% 37.27% at 24.21% 47.47%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 51.1%, #080A0B 99.74%), url("../../images/subscribe-img.png") no-repeat left;
@@ -48,3 +48,22 @@
     line-height: 19px;
 }
 
+
+@media (max-width: 768px) {
+    .newsletter__inner {
+        padding-top: 0;
+        
+    }
+    .subscribe__info {
+        text-align: center;
+    }
+
+    .subscribe__form {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .subscribe__input {
+        margin-bottom: 10px;
+    }
+}
