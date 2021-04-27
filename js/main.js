@@ -58,18 +58,16 @@ function accordion() {
             });   
             
 }
-
 function slider() {
     const   slides = document.querySelectorAll('.slider__item'),
             arrowNext = document.querySelector('.arrow-next'),
             sliderWrapper = document.querySelector('.slider__wrapper'),
             width = window.getComputedStyle(sliderWrapper).width,
             slider = document.querySelector('.slider');
-
             
-
             let currentSlide = 0;
             let slideIndex = 1;
+            let arr = [];
 
         
             sliderWrapper.style.transition = '0.5s all';
@@ -100,8 +98,6 @@ function slider() {
                 dots.forEach(dot => dot.style.backgroundColor = 'transparent');
                 dots[slideIndex-1].style.backgroundColor = '#fff';
             }
-
-            
             
 
             dots.forEach(dot => {
@@ -113,51 +109,55 @@ function slider() {
                 });
             });
 
-            function slidesOrder() {
-                if (currentSlide === 0) {
-                    slides[currentSlide].classList.toggle('one');
-                }
-                if (currentSlide === 1) {
-                    slides[currentSlide].classList.toggle('two');
-                }
-                if (currentSlide === 2) {
-                    slides[currentSlide].classList.toggle('three');
-                }
-                if (currentSlide === 3) {
-                    slides[currentSlide].classList.toggle('four');
-                }
+            slides.forEach(item => arr.push(item));
 
+            function slidesOrder(arr) {
+                arr[0].classList.add('one');
+                arr[1].classList.add('two');
+                arr[2].classList.add('three');
+                arr[3].classList.add('four');
             }
 
+            function removeAllClasses() {
+                slides.forEach(item => {
+                    item.classList.remove('one');
+                    item.classList.remove('two');
+                    item.classList.remove('three');
+                    item.classList.remove('four');
+                });
+            }
             
+            slidesOrder(arr);
 
-            function nextSlide() {
+            function nextSlide(arr) {
                 
-                //slides.forEach(card => card.classList.remove());
-                if (currentSlide < slides.length) {
-                    slides[currentSlide].classList.toggle('one');
-                    slidesOrder();
-                    
-                    currentSlide = (currentSlide+1) % slides.length;
-                } 
+                if(currentSlide <= slides.length){
+                    let firstElem = arr.shift();
+                    arr.push(firstElem);
+                    removeAllClasses();
+                    slidesOrder(arr);
+
+                    currentSlide++;
+                }
+
+                if(currentSlide === slides.length) {
+                    currentSlide = 0;
+                }
+                showSlides();
             }
                 
             
             arrowNext.addEventListener('click', () => {
-                nextSlide();
+                
+                    nextSlide(arr);
+                    
 
                 if (slideIndex == slides.length) {
                     slideIndex = 1;
                 } else {
                     slideIndex++;
                 }
-    
-                showSlides();
-                
             });
-
-            
-            
 }
 
 
