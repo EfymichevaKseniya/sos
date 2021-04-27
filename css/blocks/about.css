@@ -69,7 +69,7 @@
 
 /* стили для обёртки, в которой заключены слайды */
 .slider__wrapper {
-    position: absolute;
+    /* position: absolute; */
     right: 0;
     left: 0; 
     top: 0; 
@@ -94,29 +94,7 @@
     
 }
 
-/* .slider__item:nth-child(1) {
-    transform:  translate(0) scale(1);
-    z-index: 5;
 
-}
-
-.slider__item:nth-child(2) {
-    transform:  translate(40px) scale(0.9);
-    z-index: 4;
-
-} 
-
-.slider__item:nth-child(3) {
-    transform:  translate(80px) scale(0.85);
-    z-index: 3;
-
-}
-
-.slider__item:nth-child(4) {
-    transform:  translate(120px) scale(0.8);
-    z-index: 2;
-
-}  */
 
 .slider-img {
     width: 100%;
@@ -140,20 +118,33 @@
 
     position: absolute;
     top: 50%;
-    right: -12%;
+    right: 0;
     z-index: 10;
     
 }
 
 @media(max-width: 1200px) {
-    .slider {
-        display: none;
+    .about__inner {
+        flex-wrap: wrap;
+    }
+
+    .about__info {
+        margin: 0 auto;
+    }
+
+    .slider-img {
+        height: 310px;
+    }
+
+    .arrow-next {
+        top: 50px;
+        right: 15%;
     }
 }
 
 @media ( max-width: 768px) {
-    .about__inner {
-        flex-wrap: wrap;
+    .slider {
+        display: none;
     }
 
     .about__text::after {
@@ -169,16 +160,13 @@
 
     .about__text::after {
         top: -30%;
+        left: 1%;
     }
 }
 @media(max-width: 320px) {
     .about__text {
         margin-left: 0;
         font-size: 14px;
-    }
-
-    .about__text::after {
-        top: -30%;
     }
 
     .about__text span::after {
@@ -214,14 +202,13 @@
     margin-right: 50px;
 }
 
-.top {
-    z-index: 7;
-}
+
 
 .one {
     transform:  translate(0) scale(1);
     z-index: 5;
 }
+
 .two {
     transform:  translate(50px) scale(0.9);
     z-index: 4;
@@ -233,4 +220,9 @@
 .four {
     transform:  translate(110px) scale(0.8);
     z-index: 2;
+}
+
+.top {
+    transform:  translate(0) scale(1);
+    z-index: 7;
 }

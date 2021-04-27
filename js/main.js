@@ -58,17 +58,18 @@ function accordion() {
             });   
             
 }
+
 function slider() {
     const   slides = document.querySelectorAll('.slider__item'),
             arrowNext = document.querySelector('.arrow-next'),
             sliderWrapper = document.querySelector('.slider__wrapper'),
-            width = window.getComputedStyle(sliderWrapper).width,
             slider = document.querySelector('.slider');
             
             let currentSlide = 0;
             let slideIndex = 1;
             let arr = [];
 
+            slides.forEach(item => arr.push(item));
         
             sliderWrapper.style.transition = '0.5s all';
 
@@ -96,20 +97,30 @@ function slider() {
             
             function showSlides() {
                 dots.forEach(dot => dot.style.backgroundColor = 'transparent');
-                dots[slideIndex-1].style.backgroundColor = '#fff';
+                dots[currentSlide].style.backgroundColor = '#fff';
             }
             
 
-            dots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    const slideTo = e.target.getAttribute('data-slide-to');
-    
-                    slideIndex = slideTo;
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+
+                    slides.forEach(slide => slide.classList.remove('top'));
+                    if (currentSlide) {
+                        slides[currentSlide].classList.add('top');
+                    }
+                    
                     showSlides();
+
                 });
             });
 
-            slides.forEach(item => arr.push(item));
+            slides.forEach(slide => {
+                slide.addEventListener('click', () => {
+                    nextSlide(arr);
+                });
+            });
+
 
             function slidesOrder(arr) {
                 arr[0].classList.add('one');
@@ -124,6 +135,7 @@ function slider() {
                     item.classList.remove('two');
                     item.classList.remove('three');
                     item.classList.remove('four');
+                    item.classList.remove('top');
                 });
             }
             
@@ -131,7 +143,7 @@ function slider() {
 
             function nextSlide(arr) {
                 
-                if(currentSlide <= slides.length){
+                if(currentSlide < slides.length){
                     let firstElem = arr.shift();
                     arr.push(firstElem);
                     removeAllClasses();
@@ -148,15 +160,8 @@ function slider() {
                 
             
             arrowNext.addEventListener('click', () => {
+                nextSlide(arr);
                 
-                    nextSlide(arr);
-                    
-
-                if (slideIndex == slides.length) {
-                    slideIndex = 1;
-                } else {
-                    slideIndex++;
-                }
             });
 }
 
