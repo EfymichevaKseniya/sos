@@ -1,22 +1,15 @@
 
 function mobileBtn() {
-    const   mobileMenu = document.querySelector('.mobile__menu'),
-            mobileClose = document.querySelector('.mobile__close'),
+    const   mobileBtn = document.querySelector('.mobile__btn span'),
             navList = document.querySelector('.nav__list');
+            
         
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.add('show');
-            mobileClose.classList.add('show');
-            mobileMenu.classList.add('hide');
+        mobileBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+            mobileBtn.classList.toggle('active');
         });
-
-        mobileClose.addEventListener('click', () => {
-            navList.classList.remove('show');
-            mobileClose.classList.remove('show');
-            mobileMenu.classList.remove('hide');
-        });
-
 }  
+
 
 
 function langMenu() {
@@ -42,6 +35,8 @@ function langMenu() {
             
         });
     });
+
+    
 }
 
 
@@ -66,7 +61,6 @@ function slider() {
             slider = document.querySelector('.slider');
             
             let currentSlide = 0;
-            let slideIndex = 1;
             let arr = [];
 
             slides.forEach(item => arr.push(item));
@@ -104,12 +98,13 @@ function slider() {
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => {
                     currentSlide = i;
+                    
 
+                    
                     slides.forEach(slide => slide.classList.remove('top'));
                     if (currentSlide) {
                         slides[currentSlide].classList.add('top');
                     }
-                    
                     showSlides();
 
                 });
@@ -135,20 +130,23 @@ function slider() {
                     item.classList.remove('two');
                     item.classList.remove('three');
                     item.classList.remove('four');
-                    item.classList.remove('top');
                 });
             }
             
             slidesOrder(arr);
 
-            function nextSlide(arr) {
-                
-                if(currentSlide < slides.length){
-                    let firstElem = arr.shift();
+            function changeSlides(arr) {
+                let firstElem = arr.shift();
                     arr.push(firstElem);
                     removeAllClasses();
                     slidesOrder(arr);
+            }
 
+            function nextSlide() {
+                
+                if(currentSlide < slides.length){
+                    
+                    changeSlides(arr);
                     currentSlide++;
                 }
 

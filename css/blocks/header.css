@@ -111,7 +111,7 @@
 }
 
 .select__dropdown {
-    display: none;
+    visibility: hidden;
     position: absolute;
     top: 100%;
     left: 0;
@@ -194,13 +194,8 @@
 }
 
 .mobile__btn {
-    transition: all .4s;
-}
-
-.mobile__menu {
-    display: none;
-    width: 30px;
-    height: 20px;
+    width: 35px;
+    height: 30px;
     position: absolute;
     top: 5%;
     left: 5%;
@@ -210,53 +205,51 @@
     cursor: pointer;
 }
 
-.mobile__menu span {
+.mobile__btn span {
+    display: block;
     width: 100%;
     height: 2px;
 
     background-color: #fff;
 
-    position: absolute;
+    position: relative;
     top: 9px;
     left: 0;
 }
 
-.mobile__menu::after, 
-.mobile__menu::before {
-    content: "";
+
+.mobile__btn span::before,
+.mobile__btn span::after {
+    content: '';
     width: 100%;
     height: 2px;
-    background-color: #fff;
+
     position: absolute;
+    background: #fff;
+
+    transition: all .5s;
+    
 }
 
-.mobile__menu::before {
+.mobile__btn span::before {
+    top: 18px;
+}
+
+.mobile__btn span::after {
+    bottom: -9px;
+}
+
+.mobile__btn span.active {
+    background: rgba(255, 255, 255, 0); 
+}
+
+.mobile__btn span.active::before {
     top: 0;
-    left: 0;
+    transform: rotate(45deg);
 }
-
-.mobile__menu::after {
+.mobile__btn span.active::after {
     bottom: 0;
-    left: 0;
-}
-
-.mobile__close {
-    display: none;
-    width: 40px;
-    height: 20px;
-    border: none;
-    background: none;
-
-    position: absolute;
-    top: 10%;
-    left: 15%;
-
-    z-index: 7;
-}
-
-.mobile__close span {
-    font-size: 30px;
-    color: #fff;
+    transform: rotate(-45deg);
 }
 
 
@@ -284,7 +277,7 @@
 
 }
 
-@media (max-width: 765px) {
+@media (max-width: 768px) {
     .header__top {
         justify-content: flex-end;
     }
@@ -294,7 +287,8 @@
     }
 
     .nav__list {
-        display: none;
+        visibility: hidden;
+        display: block;
         padding: 0;
         width: 70%;
         text-align: center;
@@ -306,6 +300,8 @@
         background: rgba(0, 0, 0, 0.75);
 
         z-index: 5;
+
+        transition: .3s visibility ease-in-out;
     }
 
     .nav__item + .nav__item {
@@ -369,10 +365,12 @@
     }
 }
 
+
 .show {
-    display: none;
+    visibility: visible;
+    
 }
 .hide {
-    display: none;
+    visibility: hidden;
 }
 
