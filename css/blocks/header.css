@@ -194,6 +194,7 @@
 }
 
 .mobile__btn {
+    visibility: hidden;
     width: 35px;
     height: 30px;
     position: absolute;
@@ -282,8 +283,8 @@
         justify-content: flex-end;
     }
 
-    .mobile__menu {
-        display: block;
+    .mobile__btn {
+        visibility: visible;
     }
 
     .nav__list {
