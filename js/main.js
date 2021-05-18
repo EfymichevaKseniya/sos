@@ -63,7 +63,7 @@ function slider() {
             
             let currentSlide = 0;
             let arr = [];
-            let arr2 = [];
+            let arr2 = arr;
 
             slides.forEach(item => arr.push(item));
         
@@ -122,23 +122,23 @@ function slider() {
             
             slidesOrder(arr);
 
-            function changeSlides(arr) {
+            function changeSlides(array) {
 
                 // let elem = arr[currentSlide];
                     
                 //     arr.splice(currentSlide, 1);
                     
-                let firstElem = arr2.shift();
-                    arr2.push(firstElem);
+                let firstElem = array.shift();
+                    array.push(firstElem);
                     removeAllClasses();
-                    slidesOrder(arr2);
+                    slidesOrder(array);
             }
 
             function nextSlide() {
                 
                 if(currentSlide < slides.length){
                     
-                    changeSlides(arr);
+                    changeSlides(arr2);
                     currentSlide++;
                 }
 
@@ -162,11 +162,12 @@ function slider() {
 
                     showSlides();
 
+
                 });
             });
             
             arrowNext.addEventListener('click', () => {
-                nextSlide(slides);
+                nextSlide();
                 
             });
 }

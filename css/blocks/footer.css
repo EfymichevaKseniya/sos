@@ -80,6 +80,15 @@
 }
 
 @media (max-width: 900px) {
+    .footer__bottom {
+        flex-wrap: wrap;
+    }
+    .footer__bottom-copyright {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 900px) {
     .footer .nav__list {
         display: none;
     }
