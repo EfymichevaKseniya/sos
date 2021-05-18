@@ -198,7 +198,7 @@
     width: 35px;
     height: 30px;
     position: absolute;
-    top: 5%;
+    top: 20px;
     left: 5%;
 
     border: none;
@@ -207,6 +207,7 @@
 }
 
 .mobile__btn span {
+    margin-top: 13px;
     display: block;
     width: 100%;
     height: 2px;
@@ -214,7 +215,7 @@
     background-color: #fff;
 
     position: relative;
-    top: 9px;
+    top: 0;
     left: 0;
 }
 
@@ -233,11 +234,11 @@
 }
 
 .mobile__btn span::before {
-    top: 18px;
+    top: -8px;
 }
 
 .mobile__btn span::after {
-    bottom: -9px;
+    bottom: -8px;
 }
 
 .mobile__btn span.active {
@@ -285,24 +286,27 @@
 
     .mobile__btn {
         visibility: visible;
+        z-index: 7;
     }
 
     .nav__list {
         visibility: hidden;
+        opacity: 0;
         display: block;
         padding: 0;
-        width: 70%;
+        width: 100%;
+        height: 100vh;
         text-align: center;
         position: absolute;
-        top: 10%;
-        left: 15%;
+        top: 0;
+        left: 0;
 
         border-radius: 3px;
-        background: rgba(0, 0, 0, 0.75);
+        background: rgba(0, 0, 0, 0.9);
 
         z-index: 5;
 
-        transition: .3s visibility ease-in-out;
+        transition: .3s visibility ease-in-out, .3s opacity ease-in-out;
     }
 
     .nav__item + .nav__item {
@@ -310,7 +314,7 @@
     }
 
     .nav__item {
-        margin: 10px;
+        margin: 70px 10px;
     }
 
     .nav__link {
@@ -369,9 +373,11 @@
 
 .show {
     visibility: visible;
+    opacity: 1;
     
 }
 .hide {
     visibility: hidden;
+    opacity: 0;
 }
 

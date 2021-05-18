@@ -1,12 +1,13 @@
 
 function mobileBtn() {
-    const   mobileBtn = document.querySelector('.mobile__btn span'),
+    const   mobileBtn = document.querySelector('.mobile__btn'),
+            mobileBtnSpan = document.querySelector('.mobile__btn span'),
             navList = document.querySelector('.nav__list');
             
         
         mobileBtn.addEventListener('click', () => {
             navList.classList.toggle('show');
-            mobileBtn.classList.toggle('active');
+            mobileBtnSpan.classList.toggle('active');
         });
 }  
 
@@ -62,6 +63,7 @@ function slider() {
             
             let currentSlide = 0;
             let arr = [];
+            let arr2 = [];
 
             slides.forEach(item => arr.push(item));
         
@@ -93,29 +95,14 @@ function slider() {
                 dots.forEach(dot => dot.style.backgroundColor = 'transparent');
                 dots[currentSlide].style.backgroundColor = '#fff';
             }
+
+            // slides.forEach(slide => {
+            //     slide.addEventListener('click', () => {
+            //         nextSlide(arr);
+            //     });
+            // });
+
             
-
-            dots.forEach((dot, i) => {
-                dot.addEventListener('click', () => {
-                    currentSlide = i;
-                    
-
-                    
-                    slides.forEach(slide => slide.classList.remove('top'));
-                    if (currentSlide) {
-                        slides[currentSlide].classList.add('top');
-                    }
-                    showSlides();
-
-                });
-            });
-
-            slides.forEach(slide => {
-                slide.addEventListener('click', () => {
-                    nextSlide(arr);
-                });
-            });
-
 
             function slidesOrder(arr) {
                 arr[0].classList.add('one');
@@ -136,10 +123,15 @@ function slider() {
             slidesOrder(arr);
 
             function changeSlides(arr) {
-                let firstElem = arr.shift();
-                    arr.push(firstElem);
+
+                // let elem = arr[currentSlide];
+                    
+                //     arr.splice(currentSlide, 1);
+                    
+                let firstElem = arr2.shift();
+                    arr2.push(firstElem);
                     removeAllClasses();
-                    slidesOrder(arr);
+                    slidesOrder(arr2);
             }
 
             function nextSlide() {
@@ -155,10 +147,26 @@ function slider() {
                 }
                 showSlides();
             }
-                
+            
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    
+                    currentSlide = i;
+                    
+                    let newArr =  arr.slice(currentSlide, slides.length);
+                    let newArr2 = arr.slice(0, currentSlide);
+                    arr2 = newArr.concat(newArr2);
+                    
+                    removeAllClasses();
+                    slidesOrder(arr2);
+
+                    showSlides();
+
+                });
+            });
             
             arrowNext.addEventListener('click', () => {
-                nextSlide(arr);
+                nextSlide(slides);
                 
             });
 }

@@ -81,6 +81,8 @@
 }
 
 .slider__item {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -91,9 +93,8 @@
     left: 0; 
     top: -100px; 
     bottom: 0;
-
-    transition: all .3s;
     
+    transition: all .5s;
 }
 
 
@@ -207,24 +208,24 @@
 
 
 .one {
-    transform:  translate(0) scale(1);
+    transform:  translate(0) scale(0.95);
     z-index: 5;
 }
 
 .two {
-    transform:  translate(50px) scale(0.9);
+    transform:  translate(40px) scale(0.9);
     z-index: 4;
 }
 .three {
-    transform:  translate(80px) scale(0.85);
+    transform:  translate(70px) scale(0.85);
     z-index: 3;
 }
 .four {
-    transform:  translate(110px) scale(0.8);
+    transform:  translate(100px) scale(0.8);
     z-index: 2;
 }
 
 .top {
-    transform:  translate(0) scale(1);
+    transform:  translate(-30px) scale(1);
     z-index: 7;
 }
