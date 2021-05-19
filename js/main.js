@@ -11,8 +11,6 @@ function mobileBtn() {
         });
 }  
 
-
-
 function langMenu() {
     const select = document.querySelector('.select__box'),
         selectValue = document.querySelector('.select__value'),
@@ -36,8 +34,6 @@ function langMenu() {
             
         });
     });
-
-    
 }
 
 
@@ -58,20 +54,17 @@ function accordion() {
 function slider() {
     const   slides = document.querySelectorAll('.slider__item'),
             arrowNext = document.querySelector('.arrow-next'),
-            sliderWrapper = document.querySelector('.slider__wrapper'),
             slider = document.querySelector('.slider');
             
             let currentSlide = 0;
-            let arr = [];
-            let arr2 = arr;
+            let arrayOfSlides = [];
 
-            slides.forEach(item => arr.push(item));
+            slides.forEach(slide => arrayOfSlides.push(slide));
         
-            sliderWrapper.style.transition = '0.5s all';
 
             slider.style.position = 'relative';
 
-            const indicators = document.createElement('ol'),
+            const   indicators = document.createElement('ol'),
                     dots = [];
             indicators.classList.add('carousel-indicators');
 
@@ -96,19 +89,11 @@ function slider() {
                 dots[currentSlide].style.backgroundColor = '#fff';
             }
 
-            // slides.forEach(slide => {
-            //     slide.addEventListener('click', () => {
-            //         nextSlide(arr);
-            //     });
-            // });
-
-            
-
-            function slidesOrder(arr) {
-                arr[0].classList.add('one');
-                arr[1].classList.add('two');
-                arr[2].classList.add('three');
-                arr[3].classList.add('four');
+            function slidesOrder(array) {
+                array[0].classList.add('one');
+                array[1].classList.add('two');
+                array[2].classList.add('three');
+                array[3].classList.add('four');
             }
 
             function removeAllClasses() {
@@ -120,31 +105,28 @@ function slider() {
                 });
             }
             
-            slidesOrder(arr);
+            slidesOrder(arrayOfSlides);
 
             function changeSlides(array) {
-
-                // let elem = arr[currentSlide];
-                    
-                //     arr.splice(currentSlide, 1);
-                    
-                let firstElem = array.shift();
-                    array.push(firstElem);
-                    removeAllClasses();
-                    slidesOrder(array);
+                let newArr =  array.slice(currentSlide, slides.length);
+                let newArr2 = array.slice(0, currentSlide);
+                let newArr3 = newArr.concat(newArr2);
+                removeAllClasses();
+                slidesOrder(newArr3);
+                
             }
 
             function nextSlide() {
                 
                 if(currentSlide < slides.length){
-                    
-                    changeSlides(arr2);
                     currentSlide++;
+                    changeSlides(arrayOfSlides);
                 }
 
                 if(currentSlide === slides.length) {
                     currentSlide = 0;
                 }
+
                 showSlides();
             }
             
@@ -152,17 +134,9 @@ function slider() {
                 dot.addEventListener('click', () => {
                     
                     currentSlide = i;
-                    
-                    let newArr =  arr.slice(currentSlide, slides.length);
-                    let newArr2 = arr.slice(0, currentSlide);
-                    arr2 = newArr.concat(newArr2);
-                    
-                    removeAllClasses();
-                    slidesOrder(arr2);
 
+                    changeSlides(arrayOfSlides);
                     showSlides();
-
-
                 });
             });
             
